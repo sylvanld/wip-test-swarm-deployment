@@ -3,6 +3,8 @@ version: "3"
 services:
   database:
     image: mongo:3
+    ports:
+      - 27017:27017
     
   backend:
     image: sylvanld/shopping-backend
