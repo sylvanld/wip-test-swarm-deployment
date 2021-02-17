@@ -1,10 +1,15 @@
 version: "3"
 
 services:
+  database:
+    image: mongo:3
+    
   backend:
     image: sylvanld/shopping-backend
     networks:
       - www
+    environment:
+      SHOPPING_DATABASE_URI: mongodb://database:27017/shopping
     deploy:
       labels:
         traefik.enable: "true"
