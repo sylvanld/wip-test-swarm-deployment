@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  shopping-backend:
+    image: sylvanld/shopping-backend
+    networks:
+      - www
+    deploy:
+      labels:
+        traefik.enable: "true"
+        traefik.http.routers.shopping-frontend.rule: "Host(`api.shopping.sylvan.ovh`)"
+        traefik.http.services.shopping-frontend.loadbalancer.server.port: "80"
+        traefik.docker.network: "www"
+        
+networks:
+  www:
+    external: true
