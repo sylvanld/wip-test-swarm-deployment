@@ -5,6 +5,19 @@ services:
     image: mongo:3
     networks:
       - internal
+      
+  frontend:
+    image: sylvanld/shopping-frontend
+    networks:
+      - www
+    environment:
+      VUE_APP_BACKEND_URL: http://api.shopping.sylvan.ovh
+    deploy:
+      labels:
+        traefik.enable: "true"
+        traefik.http.routers.shopping-frontend.rule: "Host(`shopping.sylvan.ovh`)"
+        traefik.http.services.shopping-frontend.loadbalancer.server.port: "80"
+        traefik.docker.network: "www"
     
   backend:
     image: sylvanld/shopping-backend
