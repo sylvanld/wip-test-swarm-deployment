@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  shopping-backend:
+  backend:
     image: sylvanld/shopping-backend
     networks:
       - www
