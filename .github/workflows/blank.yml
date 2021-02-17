@@ -3,7 +3,7 @@
 name: CI
 
 env:
-  DOCKER_HOST: sylvan.ovh:6443
+  DOCKER_HOST: sylvan.ovh:2375
 
 # Controls when the action will run. 
 on:
