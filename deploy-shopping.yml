@@ -25,6 +25,7 @@ services:
       - www
       - internal
     environment:
+      APP_CORS_ORIGINS: http://shopping.sylvan.ovh
       SHOPPING_DATABASE_URI: mongodb://database:27017/shopping
     deploy:
       labels:
