@@ -8,8 +8,8 @@ services:
     deploy:
       labels:
         traefik.enable: "true"
-        traefik.http.routers.shopping-frontend.rule: "Host(`api.shopping.sylvan.ovh`)"
-        traefik.http.services.shopping-frontend.loadbalancer.server.port: "80"
+        traefik.http.routers.shopping-backend.rule: "Host(`api.shopping.sylvan.ovh`)"
+        traefik.http.services.shopping-backend.loadbalancer.server.port: "80"
         traefik.docker.network: "www"
         
 networks:
